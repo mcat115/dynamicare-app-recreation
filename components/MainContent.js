@@ -1,31 +1,25 @@
 import React from "react"
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  SafeAreaView,
-  Button,
-} from "react-native"
+import { StyleSheet, Text, ScrollView } from "react-native"
+import SettingsButton from "./SettingsButton"
 
 const MainContent = (props) => {
   return (
     <ScrollView style={styles.scrollView}>
       <Text style={styles.categories}>ACCOUNT</Text>
-      <Button title="Upgrade to Premium" />
+      <SettingsButton title="Upgrade to Premium" />
       <Text style={styles.categories}>SETTINGS</Text>
-      <Button title="Notifications" />
-      <Button title="Data Usage" />
+      <SettingsButton title="Notifications" />
+      <SettingsButton title="Data Usage" />
       <Text style={styles.categories}>RESOURCES</Text>
-      <Button title="Get Help" />
-      <Button title="Send Feedback" />
-      <Button title="Rate and Review" />
-      <Button title="Tell a Friend" />
+      <SettingsButton title="Get Help" />
+      <SettingsButton title="Send Feedback" />
+      <SettingsButton title="Rate and Review" />
+      <SettingsButton title="Tell a Friend" />
       <Text style={styles.categories}>MORE</Text>
-      <Button title="About DynamiCare" />
-      <Button title="Terms of Use" />
-      <Button title="Privacy" />
-      <Button title="Logout" />
+      <SettingsButton title="About DynamiCare" />
+      <SettingsButton title="Terms of Use" />
+      <SettingsButton title="Privacy" />
+      <SettingsButton title="Logout" />
       <Text style={styles.footnotes}>You are using version 123.456</Text>
       <Text style={styles.footnotes}>We appreciate you!</Text>
     </ScrollView>
@@ -40,8 +34,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   categories: {
-    fontSize: 25,
+    fontSize: 20,
     textAlign: "left",
+    backgroundColor: "#D3D3D3",
   },
   footnotes: {
     textAlign: "center",
