@@ -1,8 +1,8 @@
 import React from "react"
-import { StyleSheet, Text, ScrollView } from "react-native"
+import { StyleSheet, Text, ScrollView, Button, View } from "react-native"
 import SettingsButton from "./SettingsButton"
 
-const MainContent = (props) => {
+const Settings = ({ navigation }) => {
   return (
     <ScrollView style={styles.scrollView}>
       <Text style={styles.categories}>ACCOUNT</Text>
@@ -20,13 +20,21 @@ const MainContent = (props) => {
       <SettingsButton title="Terms of Use" />
       <SettingsButton title="Privacy" />
       <SettingsButton title="Logout" />
-      <Text style={styles.footnotes}>You are using version 123.456</Text>
-      <Text style={styles.footnotes}>We appreciate you!</Text>
+      <View style={styles.nav}>
+        <Button title="Home" onPress={() => navigation.replace("Home")} />
+        <Button title="History" onPress={() => navigation.replace("History")} />
+        <Button
+          title="Settings"
+          onPress={() => navigation.replace("Settings")}
+        />
+      </View>
+      <Text style={styles.bottom}>You are using version 123.456</Text>
+      <Text style={styles.bottom}>We appreciate you!</Text>
     </ScrollView>
   )
 }
 
-export default MainContent
+export default Settings
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -38,7 +46,13 @@ const styles = StyleSheet.create({
     textAlign: "left",
     backgroundColor: "#D3D3D3",
   },
-  footnotes: {
+  bottom: {
+    backgroundColor: "white",
     textAlign: "center",
+  },
+  nav: {
+    backgroundColor: "white",
+    flexDirection: "row",
+    justifyContent: "center",
   },
 })
