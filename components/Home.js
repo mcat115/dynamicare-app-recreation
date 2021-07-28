@@ -1,9 +1,10 @@
 import React from "react"
-import { StyleSheet, Text, Button, View } from "react-native"
+import { StyleSheet, Text, View, Button } from "react-native"
 
-const NavBar = ({ navigation }) => {
+const Home = ({ navigation }) => {
   return (
     <>
+      <Text>This is the home page!! Amazing stuff!</Text>
       <View style={styles.nav}>
         <Button title="Home" onPress={() => navigation.replace("Home")} />
         <Button title="History" onPress={() => navigation.replace("History")} />
@@ -18,9 +19,11 @@ const NavBar = ({ navigation }) => {
   )
 }
 
-export default NavBar
-
 const styles = StyleSheet.create({
+  scrollView: {
+    backgroundColor: "white",
+    marginHorizontal: 20,
+  },
   bottom: {
     backgroundColor: "white",
     textAlign: "center",
@@ -28,5 +31,8 @@ const styles = StyleSheet.create({
   nav: {
     backgroundColor: "white",
     flexDirection: "row",
+    justifyContent: "center",
   },
 })
+
+export default Home
