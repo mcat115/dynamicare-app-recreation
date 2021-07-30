@@ -1,32 +1,59 @@
 import React from "react"
-import { StyleSheet, Text, Button, View } from "react-native"
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native"
 
 const NavBar = ({ navigation }) => {
   return (
-    <>
-      <View style={styles.nav}>
-        <Button title="Home" onPress={() => navigation.replace("Home")} />
-        <Button title="History" onPress={() => navigation.replace("History")} />
-        <Button
-          title="Settings"
-          onPress={() => navigation.replace("Settings")}
+    <View style={styles.nav}>
+      <TouchableOpacity
+        onPress={() => navigation.replace("Home")}
+        style={styles.button}
+      >
+        <Image
+          source={require("../assets/home.png")}
+          style={styles.buttonImage}
         />
-      </View>
-      <Text style={styles.bottom}>You are using version 123.456</Text>
-      <Text style={styles.bottom}>We appreciate you!</Text>
-    </>
+        <Text>Home</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.replace("History")}
+        style={styles.button}
+      >
+        <Image
+          source={require("../assets/clock.png")}
+          style={styles.buttonImage}
+        />
+        <Text>History</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.replace("Settings")}
+        style={styles.button}
+      >
+        <Image
+          source={require("../assets/settings.png")}
+          style={styles.buttonImage}
+        />
+        <Text>Settings</Text>
+      </TouchableOpacity>
+    </View>
   )
 }
 
 export default NavBar
 
 const styles = StyleSheet.create({
-  bottom: {
-    backgroundColor: "white",
-    textAlign: "center",
-  },
   nav: {
     backgroundColor: "white",
     flexDirection: "row",
+  },
+  buttonImage: {
+    padding: 10,
+    margin: 5,
+    height: 25,
+    width: 25,
+    resizeMode: "stretch",
+  },
+  button: {
+    marginLeft: 30,
+    marginRight: 30,
   },
 })
