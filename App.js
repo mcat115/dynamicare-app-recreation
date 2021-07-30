@@ -20,7 +20,7 @@ export default function App() {
             options={{
               animationEnabled: false,
               headerTintColor: "white",
-              headerStyle: { backgroundColor: "cyan" },
+              headerStyle: { backgroundColor: "#00BCD4" },
             }}
           />
           <Stack.Screen
@@ -29,7 +29,7 @@ export default function App() {
             options={{
               animationEnabled: false,
               headerTintColor: "white",
-              headerStyle: { backgroundColor: "cyan" },
+              headerStyle: { backgroundColor: "#00BCD4" },
             }}
           />
           <Stack.Screen
@@ -38,7 +38,7 @@ export default function App() {
             options={{
               animationEnabled: false,
               headerTintColor: "white",
-              headerStyle: { backgroundColor: "cyan" },
+              headerStyle: { backgroundColor: "#00BCD4" },
             }}
           />
         </Stack.Navigator>
@@ -50,7 +50,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#d6d6d6",
+    backgroundColor: "#00BCD4",
     justifyContent: "center",
   },
 })
