@@ -1,6 +1,6 @@
 import "react-native-gesture-handler"
 import React from "react"
-import { StyleSheet, SafeAreaView, Button } from "react-native"
+import { StyleSheet, SafeAreaView } from "react-native"
 import Settings from "./components/Settings"
 import History from "./components/History"
 import Home from "./components/Home"
@@ -14,9 +14,33 @@ export default function App() {
     <NavigationContainer>
       <SafeAreaView style={styles.container}>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="History" component={History} />
-          <Stack.Screen name="Settings" component={Settings} />
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{
+              animationEnabled: false,
+              headerTintColor: "white",
+              headerStyle: { backgroundColor: "cyan" },
+            }}
+          />
+          <Stack.Screen
+            name="History"
+            component={History}
+            options={{
+              animationEnabled: false,
+              headerTintColor: "white",
+              headerStyle: { backgroundColor: "cyan" },
+            }}
+          />
+          <Stack.Screen
+            name="Settings"
+            component={Settings}
+            options={{
+              animationEnabled: false,
+              headerTintColor: "white",
+              headerStyle: { backgroundColor: "cyan" },
+            }}
+          />
         </Stack.Navigator>
       </SafeAreaView>
     </NavigationContainer>
