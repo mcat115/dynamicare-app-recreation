@@ -8,10 +8,8 @@ import {
   Image,
 } from "react-native"
 import SettingsButton from "./SettingsButton"
-import { useFonts, Roboto_400Regular } from "@expo-google-fonts/roboto"
 
 const Settings = ({ navigation }) => {
-  useFonts({ Roboto_400Regular })
   return (
     <>
       <ScrollView style={styles.scrollView}>
@@ -42,7 +40,7 @@ const Settings = ({ navigation }) => {
             source={require("../assets/home.png")}
             style={styles.buttonImage}
           />
-          <Text style={{ fontFamily: "Roboto_400Regular" }}>Home</Text>
+          <Text>Home</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.replace("History")}
@@ -52,7 +50,7 @@ const Settings = ({ navigation }) => {
             source={require("../assets/clock.png")}
             style={styles.marginButtonImage}
           />
-          <Text style={{ fontFamily: "Roboto_400Regular" }}>History</Text>
+          <Text>History</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.replace("Settings")}
@@ -62,7 +60,7 @@ const Settings = ({ navigation }) => {
             source={require("../assets/settings.png")}
             style={styles.coloredButtonImage}
           />
-          <Text style={styles.coloredText}>Settings</Text>
+          <Text style={{ color: "blue" }}>Settings</Text>
         </TouchableOpacity>
       </View>
     </>
@@ -78,11 +76,9 @@ const styles = StyleSheet.create({
   categories: {
     fontSize: 20,
     textAlign: "left",
-    fontFamily: "Roboto_400Regular",
   },
   footnotes: {
     textAlign: "center",
-    fontFamily: "Roboto_400Regular",
   },
   nav: {
     backgroundColor: "white",
@@ -117,9 +113,5 @@ const styles = StyleSheet.create({
   button: {
     marginLeft: 30,
     marginRight: 30,
-  },
-  coloredText: {
-    color: "blue",
-    fontFamily: "Roboto_400Regular",
   },
 })

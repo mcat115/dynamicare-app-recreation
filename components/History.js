@@ -1,9 +1,7 @@
 import React from "react"
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native"
-import { useFonts, Roboto_400Regular } from "@expo-google-fonts/roboto"
 
 const History = ({ navigation }) => {
-  useFonts({ Roboto_400Regular })
   return (
     <>
       <Image source={require("../assets/thumbs-up.png")} style={styles.image} />
@@ -20,7 +18,7 @@ const History = ({ navigation }) => {
             source={require("../assets/home.png")}
             style={styles.buttonImage}
           />
-          <Text style={{ fontFamily: "Roboto_400Regular" }}>Home</Text>
+          <Text>Home</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.replace("History")}
@@ -30,7 +28,7 @@ const History = ({ navigation }) => {
             source={require("../assets/clock.png")}
             style={styles.coloredButtonImage}
           />
-          <Text style={styles.coloredText}>History</Text>
+          <Text style={{ color: "blue" }}>History</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.replace("Settings")}
@@ -40,7 +38,7 @@ const History = ({ navigation }) => {
             source={require("../assets/settings.png")}
             style={styles.marginButtonImage}
           />
-          <Text style={{ fontFamily: "Roboto_400Regular" }}>Settings</Text>
+          <Text>Settings</Text>
         </TouchableOpacity>
       </View>
     </>
@@ -85,10 +83,6 @@ const styles = StyleSheet.create({
   button: {
     marginLeft: 30,
     marginRight: 30,
-  },
-  coloredText: {
-    color: "blue",
-    fontFamily: "Roboto_400Regular",
   },
   text: {
     fontSize: 16,

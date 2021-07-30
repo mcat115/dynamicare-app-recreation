@@ -1,9 +1,7 @@
 import React from "react"
 import { StyleSheet, TouchableOpacity, Image, Text } from "react-native"
-import { useFonts, Roboto_400Regular } from "@expo-google-fonts/roboto"
 
 const SettingsButton = (props) => {
-  useFonts({ Roboto_400Regular })
   return (
     <TouchableOpacity style={styles.button}>
       <Text style={styles.buttonText}>{props.title}</Text>
@@ -37,7 +35,6 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 20,
-    fontFamily: "Roboto_400Regular",
     marginTop: 20,
     marginBottom: 20,
   },
