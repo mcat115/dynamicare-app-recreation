@@ -1,9 +1,10 @@
 import "react-native-gesture-handler"
 import React from "react"
 import { StyleSheet, SafeAreaView } from "react-native"
-import Settings from "./components/Settings"
-import History from "./components/History"
 import Home from "./components/Home"
+import History from "./components/History"
+import Settings from "./components/Settings"
+import SpecificSetting from "./components/SpecificSetting"
 import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator } from "@react-navigation/stack"
 
@@ -37,6 +38,14 @@ export default function App() {
             component={Settings}
             options={{
               animationEnabled: false,
+              headerTintColor: "white",
+              headerStyle: { backgroundColor: "#00BCD4" },
+            }}
+          />
+          <Stack.Screen
+            name="SpecificSetting"
+            component={SpecificSetting}
+            options={{
               headerTintColor: "white",
               headerStyle: { backgroundColor: "#00BCD4" },
             }}

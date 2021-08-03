@@ -4,7 +4,10 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native"
 const Home = ({ navigation }) => {
   return (
     <>
-      <Text>This is the home page!! Amazing stuff!</Text>
+      <View style={styles.homeContainer}>
+        <Text>This is the home page placeholder!! Amazing stuff!</Text>
+        <Image source={require("../assets/logo.png")} style={styles.image} />
+      </View>
       <View style={styles.nav}>
         <TouchableOpacity
           onPress={() => navigation.replace("Home")}
@@ -71,6 +74,17 @@ const styles = StyleSheet.create({
   button: {
     marginLeft: 30,
     marginRight: 30,
+  },
+  image: {
+    padding: 10,
+    margin: 5,
+    height: 250,
+    width: 250,
+    resizeMode: "stretch",
+  },
+  homeContainer: {
+    justifyContent: "center",
+    alignItems: "center",
   },
 })
 

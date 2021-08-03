@@ -4,11 +4,16 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native"
 const History = ({ navigation }) => {
   return (
     <>
-      <Image source={require("../assets/thumbs-up.png")} style={styles.image} />
-      <Text style={styles.boldText}>
-        Looks like you haven't completed any activies yet.
-      </Text>
-      <Text style={styles.text}>Explore the app to get started!</Text>
+      <View style={styles.historyContainer}>
+        <Image
+          source={require("../assets/thumbs-up.png")}
+          style={styles.image}
+        />
+        <Text style={styles.boldText}>
+          Looks like you haven't completed any activies yet.
+        </Text>
+        <Text style={styles.text}>Explore the app to get started!</Text>
+      </View>
       <View style={styles.nav}>
         <TouchableOpacity
           onPress={() => navigation.replace("Home")}
@@ -104,9 +109,12 @@ const styles = StyleSheet.create({
     height: 80,
     width: 80,
     resizeMode: "stretch",
-    left: 150,
     tintColor: "gray",
     marginTop: 250,
+  },
+  historyContainer: {
+    justifyContent: "center",
+    alignItems: "center",
   },
 })
 

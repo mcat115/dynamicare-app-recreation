@@ -1,9 +1,14 @@
 import React from "react"
 import { StyleSheet, TouchableOpacity, Image, Text } from "react-native"
+import { useNavigation } from "@react-navigation/native"
 
 const SettingsButton = (props) => {
+  const navigation = useNavigation()
   return (
-    <TouchableOpacity style={styles.button}>
+    <TouchableOpacity
+      style={styles.button}
+      onPress={() => navigation.navigate("SpecificSetting")}
+    >
       <Text style={styles.buttonText}>{props.title}</Text>
       <Image
         source={require("../assets/enter.png")}
