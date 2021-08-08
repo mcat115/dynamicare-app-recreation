@@ -3,7 +3,7 @@ import { StyleSheet, Text, ScrollView } from "react-native"
 import SettingsButton from "./SettingsButton"
 import NavBar from "./NavBar"
 
-const Settings = () => {
+const Settings = (props) => {
   return (
     <>
       <ScrollView style={styles.scrollView}>
@@ -25,7 +25,10 @@ const Settings = () => {
         <Text style={styles.footnotes}>You are using version 123.456</Text>
         <Text style={styles.footnotes}>We appreciate you!</Text>
       </ScrollView>
-      <NavBar />
+      <NavBar
+        iconColors={props.iconColors}
+        setIconColors={props.setIconColors}
+      />
     </>
   )
 }
