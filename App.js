@@ -1,5 +1,5 @@
 import "react-native-gesture-handler"
-import React from "react"
+import React, { useState } from "react"
 import { StyleSheet, SafeAreaView } from "react-native"
 import Home from "./components/Home"
 import History from "./components/History"
@@ -10,6 +10,11 @@ import { createStackNavigator } from "@react-navigation/stack"
 
 export default function App() {
   const Stack = createStackNavigator()
+  const [iconColors, setIconColors] = useState({
+    home: "blue",
+    history: "black",
+    settings: "black",
+  })
 
   return (
     <NavigationContainer>
@@ -17,31 +22,52 @@ export default function App() {
         <Stack.Navigator>
           <Stack.Screen
             name="Home"
-            component={Home}
             options={{
               animationEnabled: false,
               headerTintColor: "white",
               headerStyle: { backgroundColor: "#00BCD4" },
             }}
-          />
+          >
+            {(props) => (
+              <Home
+                {...props}
+                iconColors={iconColors}
+                setIconColors={setIconColors}
+              />
+            )}
+          </Stack.Screen>
           <Stack.Screen
             name="History"
-            component={History}
             options={{
               animationEnabled: false,
               headerTintColor: "white",
               headerStyle: { backgroundColor: "#00BCD4" },
             }}
-          />
+          >
+            {(props) => (
+              <History
+                {...props}
+                iconColors={iconColors}
+                setIconColors={setIconColors}
+              />
+            )}
+          </Stack.Screen>
           <Stack.Screen
             name="Settings"
-            component={Settings}
             options={{
               animationEnabled: false,
               headerTintColor: "white",
               headerStyle: { backgroundColor: "#00BCD4" },
             }}
-          />
+          >
+            {(props) => (
+              <Settings
+                {...props}
+                iconColors={iconColors}
+                setIconColors={setIconColors}
+              />
+            )}
+          </Stack.Screen>
           <Stack.Screen
             name="SpecificSetting"
             component={SpecificSetting}

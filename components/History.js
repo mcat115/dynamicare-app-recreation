@@ -2,7 +2,7 @@ import React from "react"
 import { StyleSheet, Text, View, Image } from "react-native"
 import NavBar from "./NavBar"
 
-const History = () => {
+const History = (props) => {
   return (
     <>
       <View style={styles.historyContainer}>
@@ -15,7 +15,10 @@ const History = () => {
         </Text>
         <Text style={styles.text}>Explore the app to get started!</Text>
       </View>
-      <NavBar />
+      <NavBar
+        iconColors={props.iconColors}
+        setIconColors={props.setIconColors}
+      />
     </>
   )
 }

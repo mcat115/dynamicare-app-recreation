@@ -2,14 +2,17 @@ import React from "react"
 import { StyleSheet, Text, View, Image } from "react-native"
 import NavBar from "./NavBar"
 
-const Home = () => {
+const Home = (props) => {
   return (
     <>
       <View style={styles.homeContainer}>
         <Text>This is the home page placeholder!! Amazing stuff!</Text>
         <Image source={require("../assets/logo.png")} style={styles.image} />
       </View>
-      <NavBar />
+      <NavBar
+        iconColors={props.iconColors}
+        setIconColors={props.setIconColors}
+      />
     </>
   )
 }
