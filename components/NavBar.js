@@ -37,7 +37,10 @@ const NavBar = (props) => {
       <TouchableOpacity onPress={homePress} style={styles.button}>
         <Image
           source={require("../assets/home.png")}
-          style={[styles.homeButtonImage, { tintColor: props.iconColors.home }]}
+          style={[
+            styles.buttonImage,
+            { tintColor: props.iconColors.home, marginLeft: 7 },
+          ]}
         />
         <Text style={{ color: props.iconColors.home }}>Home</Text>
       </TouchableOpacity>
@@ -45,8 +48,8 @@ const NavBar = (props) => {
         <Image
           source={require("../assets/clock.png")}
           style={[
-            styles.historySettingsButtonImage,
-            { tintColor: props.iconColors.history },
+            styles.buttonImage,
+            { tintColor: props.iconColors.history, marginLeft: 11 },
           ]}
         />
         <Text style={{ color: props.iconColors.history }}>History</Text>
@@ -55,8 +58,8 @@ const NavBar = (props) => {
         <Image
           source={require("../assets/settings.png")}
           style={[
-            styles.historySettingsButtonImage,
-            { tintColor: props.iconColors.settings },
+            styles.buttonImage,
+            { tintColor: props.iconColors.settings, marginLeft: 13 },
           ]}
         />
         <Text style={{ color: props.iconColors.settings }}>Settings</Text>
@@ -72,21 +75,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: "auto",
   },
-  historySettingsButtonImage: {
+  buttonImage: {
     padding: 10,
     margin: 5,
     height: 25,
     width: 25,
     resizeMode: "stretch",
-    marginLeft: 10,
-  },
-  homeButtonImage: {
-    padding: 10,
-    margin: 5,
-    height: 25,
-    width: 25,
-    resizeMode: "stretch",
-    marginLeft: 6,
   },
   button: {
     marginLeft: 30,

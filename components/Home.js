@@ -1,13 +1,29 @@
-import React from "react"
-import { StyleSheet, Text, View, Image } from "react-native"
+import React, { useEffect, useState } from "react"
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native"
 import NavBar from "./NavBar"
+import { Audio } from "expo-av"
 
 const Home = (props) => {
+  const [chime] = useState(new Audio.Sound())
+
+  useEffect(() => {
+    async function loadSounds() {
+      await chime.loadAsync(require("../assets/nba_draft_sound.mp3"))
+    }
+    loadSounds()
+  }, [])
+
+  const playSound = () => {
+    chime.playAsync()
+  }
+
   return (
     <>
       <View style={styles.homeContainer}>
         <Text>This is the home page placeholder!! Amazing stuff!</Text>
-        <Image source={require("../assets/logo.png")} style={styles.image} />
+        <TouchableOpacity onPress={playSound}>
+          <Image source={require("../assets/logo.png")} style={styles.image} />
+        </TouchableOpacity>
       </View>
       <NavBar
         iconColors={props.iconColors}
