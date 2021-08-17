@@ -3,7 +3,6 @@ Making a clone of the DynamiCare Health mobile app from scratch, just from looki
 To create locally and run in your browser:
 ```
 git clone https://github.com/mcat115/dynamicare-app-recreation
-cd React-Native-Experiment
 yarn install
 yarn web
 ```
